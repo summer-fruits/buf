@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package sainsburys.v1;
+
+service SainsburysService {
+  // TransferBasket transfers all line items held into a basket to Sainsbury's.
+  rpc TransferBasket(TransferBasketRequest) returns (TransferBasketResponse);
+}
+
+message TransferBasketRequest {
+  int64 basket_id = 1;
+}
+
+message TransferBasketResponse {}
