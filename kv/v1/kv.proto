@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package kv.v1;
+
+import "google/protobuf/timestamp.proto";
+
+// KV service implements a key-value store.
+service KV {
+  // Get fetches the value associated with the given key.
+  rpc Get(Key) returns (KeyValue);
+
+  // GetDel atomically reads and then deletes the value for the given key.
+  rpc Del(Key) returns (KeyValue);
+
+  // Set stores the given key value pair.
+  rpc Set(KeyValue) returns (KeyValue);
+}
+
+message Key {
+  bytes key = 1;
+}
+
+message KeyValue {
+  bytes key = 1;
+  bytes value = 2;
+  google.protobuf.Timestamp expiry_time = 3;
+}
