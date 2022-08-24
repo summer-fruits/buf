@@ -1,7 +1,5 @@
 version: v1
 name: buf.build/summer-fruits/buf
-deps:
-  - buf.build/summer-fruits/wellknown
 
 lint:
   use:

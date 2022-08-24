@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package summerfruits.v1;
+
+message Flavour {
+  string name = 1;
+  double rating = 2;
+  string description = 3;
+}
