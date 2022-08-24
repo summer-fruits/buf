@@ -3,6 +3,7 @@ syntax = "proto3";
 package juice.v1;
 
 import "summerfruits/v1/summerfruits.proto";
+import "google/protobuf/timestamp.proto";
 
 service JuiceApi {
   rpc ListFlavours(ListFlavoursRequest) returns (ListFlavoursResponse);
@@ -13,4 +14,5 @@ message ListFlavoursRequest {
 
 message ListFlavoursResponse {
   repeated summerfruits.v1.Flavour flavours = 1;
+  optional google.protobuf.Timestamp timed_at = 2;
 }
